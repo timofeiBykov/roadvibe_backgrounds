@@ -1,0 +1,108 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.dagger.hilt.android'
+    id 'com.google.devtools.ksp'
+}
+
+android {
+    namespace 'com.spark.roadvibe.app'
+    compileSdk 35
+
+
+    defaultConfig {
+        applicationId "com.spark.roadvibe.app"
+        minSdk 26
+        targetSdk 35
+        versionCode 1
+        versionName "1.0.2"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildFeatures {
+        buildConfig true
+        viewBinding true
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.5.0'
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+            excludes += "META-INF/LICENSE*"
+
+            pickFirsts += [
+                    'xsd/catalog.xml',
+                    'META-INF/DEPENDENCIES',
+                    'META-INF/LICENSE.md',
+                    'META-INF/NOTICE.md',
+                    'META-INF/io.netty.versions.properties',
+                    'META-INF/INDEX.LIST'
+            ]
+
+        }
+    }
+
+    ksp {
+        arg("room.schemaLocation", "$projectDir/schemas")
+    }
+}
+
+dependencies {
+    // UI
+    implementation platform('androidx.compose:compose-bom:2023.06.01')
+    implementation 'androidx.compose.material3:material3'
+    implementation 'androidx.compose.material:material-icons-extended'
+    implementation 'androidx.compose.runtime:runtime-livedata'
+    implementation 'androidx.activity:activity-compose:1.7.2'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.1'
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
+
+
+// ViewModel и LiveData
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1'
+
+// Room (только доступ к DAO через viewModel, вся логика в roadvibe)
+    implementation 'androidx.room:room-ktx:2.6.1'
+    implementation 'com.google.android.gms:play-services-location:21.3.0'
+    implementation 'androidx.lifecycle:lifecycle-process:2.9.1'
+    ksp 'androidx.room:room-compiler:2.6.1'
+
+// Hilt
+    implementation "com.google.dagger:hilt-android:2.50"
+    ksp "com.google.dagger:hilt-compiler:2.50"
+
+// Permissions + системные панели
+    implementation "com.google.accompanist:accompanist-permissions:0.28.0"
+    implementation "com.google.accompanist:accompanist-systemuicontroller:0.28.0"
+
+// Koin (если не используешь Hilt в app — удали Hilt)
+    implementation "io.insert-koin:koin-android:3.4.0"
+    implementation "io.insert-koin:koin-androidx-compose:3.4.0"
+
+// AppCenter
+    implementation 'com.microsoft.appcenter:appcenter-analytics:4.4.5'
+    implementation 'com.microsoft.appcenter:appcenter-crashes:4.4.5'
+
+// Отладка
+    debugImplementation 'androidx.compose.ui:ui-tooling'
+    debugImplementation 'androidx.compose.ui:ui-test-manifest'
+
+// Встроенная библиотека roadvibe
+    implementation project(path: ':roadvibe')
+    implementation 'com.github.PhilJay:MPAndroidChart:3.1.0'
+
+
+
+
+
+
+}

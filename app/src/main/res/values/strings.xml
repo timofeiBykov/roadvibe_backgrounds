@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="business_name" translatable="false">Roadvibe</string>
+    <string name="app_name" translatable="false">RoadVibe App</string>
+    <string name="server">Server</string>
+    <string name="server_available">Available</string>
+    <string name="server_unavailable">Unavailable</string>
+    <string name="server_uploading">Uploading</string>
+    <string name="server_upload_failed">Upload failed</string>
+    <string name="start_record">Start record</string>
+    <string name="stop_record">Stop record</string>
+    <string name="gyroscope">Gyroscope</string>
+    <string name="allrotation">CurrentDeviceRotation</string>
+    <string name="accelerometer">Accelerometer</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="unable_to_continue_without_location_title">Location permission required</string>
+    <string name="unable_to_continue_without_location_content">Unable to continue without granting location permission to application. Please press OK button to request permissions again</string>
+    <string name="unable_to_continue_without_location_settings_only">Unable to continue without location. At this point, it can be done at system settings menu.</string>
+</resources>

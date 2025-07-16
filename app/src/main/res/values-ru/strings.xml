@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="server">Сервер</string>
+    <string name="server_available">Доступен</string>
+    <string name="server_unavailable">Недоступен</string>
+    <string name="server_uploading">Загрузка</string>
+    <string name="server_upload_failed">Не получилось :(</string>
+    <string name="start_record">Начать запись</string>
+    <string name="stop_record">Окончить запись</string>
+    <string name="gyroscope">Гироскоп</string>
+    <string name="allrotation">Поворот устройства по всем осям</string>
+    <string name="accelerometer">Акселерометр</string>
+    <string name="ok">Ок</string>
+    <string name="cancel">Отменить</string>
+    <string name="unable_to_continue_without_location_title">Требуется разрешение на отслеживание перемещения</string>
+    <string name="unable_to_continue_without_location_content">Невозможно продолжить работу приложения без разрешения местоположения.</string>
+    <string name="unable_to_continue_without_location_settings_only">Невозможно продолжить работую приложения без разрешения местопожения. Пожалуйста, разрешите приложению отслеживать местоположение в настройках системы.</string>
+</resources>

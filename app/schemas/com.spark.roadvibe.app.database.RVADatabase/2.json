@@ -1,0 +1,106 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "648f8a58e8b1dfbf070fc63d33bcd363",
+    "entities": [
+      {
+        "tableName": "roadvibe_telemetry_trackpoint",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ts` INTEGER NOT NULL, `scId` BLOB, `gx` REAL NOT NULL, `gy` REAL NOT NULL, `gz` REAL NOT NULL, `ax` REAL NOT NULL, `ay` REAL NOT NULL, `az` REAL NOT NULL, `lat` REAL NOT NULL, `lon` REAL NOT NULL, `alt` REAL NOT NULL, `sp` REAL NOT NULL, `finished` INTEGER, PRIMARY KEY(`ts`))",
+        "fields": [
+          {
+            "fieldPath": "ts",
+            "columnName": "ts",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "scId",
+            "columnName": "scId",
+            "affinity": "BLOB",
+            "notNull": false
+          },
+          {
+            "fieldPath": "gx",
+            "columnName": "gx",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gy",
+            "columnName": "gy",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gz",
+            "columnName": "gz",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ax",
+            "columnName": "ax",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ay",
+            "columnName": "ay",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "az",
+            "columnName": "az",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lat",
+            "columnName": "lat",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lon",
+            "columnName": "lon",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "alt",
+            "columnName": "alt",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sp",
+            "columnName": "sp",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "finished",
+            "columnName": "finished",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "ts"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '648f8a58e8b1dfbf070fc63d33bcd363')"
+    ]
+  }
+}
