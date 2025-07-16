@@ -1,0 +1,38 @@
+ext {
+
+    def apiPropertiesFile = project.rootProject.file("api.properties")
+    def apiProperties = new Properties()
+    apiProperties.load(new FileInputStream(apiPropertiesFile))
+
+    def get_config = { s -> "${apiProperties.getProperty(s)}" }
+
+    def APPCENTER_KEY = "APPCENTER_KEY"
+    def QUEUE_USERNAME = "QUEUE_USERNAME"
+    def QUEUE_PASSWORD = "QUEUE_PASSWORD"
+    def QUEUE_HOST = "QUEUE_HOST"
+    def QUEUE_PORT = "QUEUE_PORT"
+    def QUEUE_VIRTUALHOST = "QUEUE_VIRTUALHOST"
+    def QUEUE_NAME
+
+    api_key = [
+            appcenter       : APPCENTER_KEY,
+            queue_username      : QUEUE_USERNAME,
+            queue_password  : QUEUE_PASSWORD,
+            queue_host      : QUEUE_HOST,
+            queue_port      : QUEUE_PORT,
+            queue_vhost     : QUEUE_VIRTUALHOST,
+            queue_name      : QUEUE_NAME
+    ]
+
+    appcenter = [
+            key : get_config(APPCENTER_KEY)
+    ]
+    queue = [
+            username    : get_config(QUEUE_USERNAME),
+            password    : get_config(QUEUE_PASSWORD),
+            host        : get_config(QUEUE_HOST),
+            port        : get_config(QUEUE_PORT),
+            virtualhost : get_config(QUEUE_VIRTUALHOST),
+            queue_name  : get_config(QUEUE_NAME),
+    ]
+}

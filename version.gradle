@@ -1,0 +1,18 @@
+ext {
+
+    library = [
+            groupId         : "com.spark.roadvibe.lib",
+    ]
+
+    app = [
+            groupId         : "com.spark.roadvibe.app"
+    ]
+
+    common = [
+            target_sdk      : 35,
+            min_sdk         : 26,
+            groupId         : 'com.spark',
+            version_name    : '1.0.2',
+            vesrion_code    : 1
+    ]
+}
